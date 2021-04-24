@@ -1,21 +1,17 @@
 {
-  "name": "firstapp",
+  "name": "hardware",
   "version": "1.0.0",
-  "description": "try npm new version",
-  "main": "app.js",
-  "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "joi": "^17.4.0",
-    "morgan": "^1.10.0",
-    "mysql": "^2.18.1",
-    "node-red": "^1.2.9",
-    "nodemon": "^2.0.7"
-  },
-  "devDependencies": {},
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Palm",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "socket.io": "^4.0.1"
+  }
 }

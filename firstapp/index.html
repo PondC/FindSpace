@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardware</title>
+  </head>
+  <body>
+    <h3>numinout</h3>
+    <div id="num0">1</div>
+    <div id="num1">2</div>
+    <div id="num2">3</div>
+    <div id="num3">4</div>
+    <div id="num4">5</div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io.connect("http://localhost:3000");
+      socket.on("connect", () => {
+        socket.emit("join", "Hello World");
+      });
+      socket.on("hardware", (data) => {
+        //console.log(data[0].num_in_out);
+
+        for (var i = 0; i < data.length; i++) {
+          $(`#num${i}`).html(
+            `people in workspace: ${data[i].suminout} workspaceid: ${data[i].workspaceid}`
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
